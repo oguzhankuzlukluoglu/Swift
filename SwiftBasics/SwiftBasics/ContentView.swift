@@ -14,14 +14,15 @@ struct ContentView: View {
             .padding()
             .overlay {
                 Image(systemName: "figure.archery")
-                    .font(.system(size: 144))
+                    .font(.system(size: 244))
                     .foregroundColor(.orange)
                 Text("archery")
                     .font(.caption)
                     
             }
-        Text("archery")
+        Text("ARCHERY")
             .font(.title)
+            
     }
 }
 
