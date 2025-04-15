@@ -1,31 +1,38 @@
-//
-//  ContentView.swift
-//  SwiftBasics
-//
-//  Created by Oguzhan on 15.04.2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Circle()
-            .fill(.blue)
-            .padding()
-            .overlay {
-                Image(systemName: "figure.archery")
-                    .font(.system(size: 244))
-                    .foregroundColor(.orange)
-                Text("archery")
-                    .font(.caption)
-                    
-            }
-        Text("ARCHERY")
-            .font(.title)
-            
-    }
+   var activities = ["Archery", "Baseball", "Basketball",
+                    "Bowling", "Boxing", "Cricket", "Curling",
+                    "Fencing", "Golf", "Hiking", "Lacrosse", "Rugby",
+                    "Squash"]
+   
+   var selected = "Boxing"
+   
+   var body: some View {
+       VStack {
+           Text("Why not try...")
+               .font(.largeTitle.bold())
+           
+           VStack {
+               Circle()
+                   .fill(.blue)
+                   .padding()
+                   .overlay(
+                       Image(systemName:
+                            "figure.\(selected.lowercased())")
+                           .font(.system(size: 144))
+                           .foregroundColor(.white)
+                   )
+               
+               Text("\(selected)!")
+                   .font(.title)
+           }
+       }
+   }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+   static var previews: some View {
+       ContentView()
+   }
 }
